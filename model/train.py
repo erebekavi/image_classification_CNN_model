@@ -1,10 +1,7 @@
 import tensorflow as tf
-import numpy as np
 import keras
 from keras import layers, models
 import os
-
-
 
 #Load and Preprocess Your Data
 
@@ -12,22 +9,22 @@ IMG_SIZE = (150, 150)  # Resize images to this size
 BATCH_SIZE = 32
 
 # Load training data
-train_ds = keras.preprocessing.image_dataset_from_directory(
-    'dataset/train',
+train_ds = tf.keras.preprocessing.image_dataset_from_directory(
+    'model/dataset/train',
     image_size=IMG_SIZE,
     batch_size=BATCH_SIZE
 )
 
 # Load validation data
-val_ds = keras.preprocessing.image_dataset_from_directory(
-    'dataset/validation',
+val_ds = tf.keras.preprocessing.image_dataset_from_directory(
+    'model/dataset/validation',
     image_size=IMG_SIZE,
     batch_size=BATCH_SIZE
 )
 
 # Load test data
-test_ds = keras.preprocessing.image_dataset_from_directory(
-    'dataset/test',
+test_ds = tf.keras.preprocessing.image_dataset_from_directory(
+    'model/dataset/test',
     image_size=IMG_SIZE,
     batch_size=BATCH_SIZE
 )
@@ -66,7 +63,7 @@ def get_class_names_from_directory(directory):
     return sorted([d.name for d in os.scandir(directory) if d.is_dir()])
 
 # Assume 'dataset/train' is the path where your class directories are
-class_names = get_class_names_from_directory('dataset/train')
+class_names = get_class_names_from_directory('model/dataset/train')
 num_classes = len(class_names)
 
 model = models.Sequential([

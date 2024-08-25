@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Load the trained model
-model = keras.models.load_model('my_model.h5')
+model = keras.models.load_model('model/my_model.h5')
 
 
 
@@ -27,7 +27,7 @@ def load_and_prepare_image(img_path):
     return img_array
 
 # Path to the new image
-img_path = 'chickencurry.jpg'
+img_path = 'model/Apple-Juice-Square.jpg'
 
 # Prepare the image
 img_array = load_and_prepare_image(img_path)
@@ -59,7 +59,7 @@ def get_class_names_from_directory(directory):
     return sorted([d.name for d in os.scandir(directory) if d.is_dir()])
 
 
-class_names = get_class_names_from_directory('dataset/train')
+class_names = get_class_names_from_directory('model/dataset/train')
  # Replace with your actual class names
 predicted_class_name = class_names[predicted_class_index]
 print(f"Predicted class name: {predicted_class_name}")
