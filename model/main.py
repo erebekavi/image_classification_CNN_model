@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Load the trained model
-model = keras.models.load_model('model/my_model.h5')
+model = keras.models.load_model('model/CNN_model.h5')
 
 
 
@@ -27,7 +27,7 @@ def load_and_prepare_image(img_path):
     return img_array
 
 # Path to the new image
-img_path = 'model/Apple-Juice-Square.jpg'
+img_path = 'model/Apple_1pie.jpg'
 
 # Prepare the image
 img_array = load_and_prepare_image(img_path)

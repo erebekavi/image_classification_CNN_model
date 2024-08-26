@@ -3,9 +3,9 @@ import keras
 from keras import layers, models
 import os
 
-#Load and Preprocess Your Data
-
-IMG_SIZE = (150, 150)  # Resize images to this size
+#Preprocess Your Data
+# Resize images
+IMG_SIZE = (150, 150)   
 BATCH_SIZE = 32
 
 # Load training data
@@ -30,7 +30,6 @@ test_ds = tf.keras.preprocessing.image_dataset_from_directory(
 )
 
 
-#Normalize and Augment Data
 
 # Normalize images
 normalization_layer = keras.layers.Rescaling(1./255)
@@ -43,7 +42,7 @@ train_ds = train_ds.map(preprocess_image)
 val_ds = val_ds.map(preprocess_image)
 test_ds = test_ds.map(preprocess_image)
 
-# Optional: Data augmentation
+# Data augmentation
 
 
 data_augmentation = keras.Sequential([
@@ -62,7 +61,7 @@ train_ds = train_ds.map(augment_image)
 def get_class_names_from_directory(directory):
     return sorted([d.name for d in os.scandir(directory) if d.is_dir()])
 
-# Assume 'dataset/train' is the path where your class directories are
+
 class_names = get_class_names_from_directory('model/dataset/train')
 num_classes = len(class_names)
 
@@ -101,7 +100,5 @@ print(f"Test accuracy: {test_acc}")
 #save and load model
 
 # Save the model
-model.save('my_model.h5')
+model.save('model/CNN_model.h5')
 
-# Load the model
-loaded_model = keras.models.load_model('SIH_demo.h5')
