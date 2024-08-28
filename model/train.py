@@ -6,7 +6,7 @@ import os
 #Preprocess Your Data
 # Resize images
 IMG_SIZE = (150, 150)   
-BATCH_SIZE = 32
+BATCH_SIZE = 1000
 
 # Load training data
 train_ds = tf.keras.preprocessing.image_dataset_from_directory(
@@ -70,7 +70,7 @@ model = models.Sequential([
     layers.MaxPooling2D((2, 2)),
     layers.Conv2D(64, (3, 3), activation='relu'),
     layers.MaxPooling2D((2, 2)),
-    layers.Conv2D(128, (3, 3), activation='relu'),
+    layers.Conv2D(64, (3, 3), activation='relu'),
     layers.MaxPooling2D((2, 2)),
     layers.Conv2D(128, (3, 3), activation='relu'),
     layers.MaxPooling2D((2, 2)),
