@@ -67,15 +67,19 @@ num_classes = len(class_names)
 
 model = models.Sequential([
     layers.Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)),
+    layers.BatchNormalization(),
     layers.MaxPooling2D((2, 2)),
     layers.Conv2D(64, (3, 3), activation='relu'),
-    layers.MaxPooling2D((2, 2)),
-    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.BatchNormalization(),
     layers.MaxPooling2D((2, 2)),
     layers.Conv2D(128, (3, 3), activation='relu'),
+    layers.BatchNormalization(),
     layers.MaxPooling2D((2, 2)),
-    layers.Flatten(),
-    layers.Dense(512, activation='relu'),
+    layers.Conv2D(256, (3, 3), activation='relu'),
+    layers.BatchNormalization(),
+    layers.MaxPooling2D((2, 2)),
+    layers.GlobalAveragePooling2D(),
+    layers.Dense(512, activation='relu', kernel_regularizer='l2'),
     layers.Dropout(0.5),
     layers.Dense(num_classes, activation='softmax')
 ])
