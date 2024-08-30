@@ -6,7 +6,7 @@ import os
 #Preprocess Your Data
 # Resize images
 IMG_SIZE = (150, 150)   
-BATCH_SIZE = 1000
+BATCH_SIZE = 32
 
 # Load training data
 train_ds = tf.keras.preprocessing.image_dataset_from_directory(
