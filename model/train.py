@@ -5,7 +5,7 @@ import os
 
 #Preprocess Your Data
 # Resize images
-IMG_SIZE = (150, 150)   
+IMG_SIZE = (150, 150)
 BATCH_SIZE = 32
 
 # Load training data
@@ -62,7 +62,7 @@ def get_class_names_from_directory(directory):
     return sorted([d.name for d in os.scandir(directory) if d.is_dir()])
 
 
-class_names = get_class_names_from_directory('model/dataset/train')
+class_names = get_class_names_from_directory('model/dataset/test')
 num_classes = len(class_names)
 
 model = models.Sequential([
