@@ -87,4 +87,4 @@ def take_img():
 
     load_img("photo.png")
 
-load_img("model/Apple_1pie.jpg")
+load_img("model/1.jpg")
