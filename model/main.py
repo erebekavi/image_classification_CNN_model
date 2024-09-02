@@ -87,4 +87,4 @@ def take_img():
 
     load_img("photo.png")
 
-load_img("model/honey-and-soy-chicken-wings-recipe-520375-1.jpeg")
+load_img("model/Apple_1pie.jpg")
