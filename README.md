@@ -1,7 +1,4 @@
 # Image Classification CNN model prototype
 
-a Convolutional Neural Network (CNN) model for classifying images into predefined categories(web-based).
-The model should be transparent (white-box), meaning that its decision-making process should be understandable and interpretable. 
-This involves not just achieving high accuracy, but also ensuring that the model's predictions can be explained and justified. 
-A labeled dataset of images where each image is associated with a specific category. 
-For this example, we created our own  dataset, which consists of more than 60,000 32x32 color images in more than 40 classes.
+A Convolutional Neural Network (CNN) model was developed for classifying images into predefined categories, 
+focusing on transparency and interpretability. Beyond accuracy, the model ensures its decision-making process is understandable and justifiable. Using a custom-labeled dataset of over 60,000 32x32 color images across 40+ classes, the model's predictions are both accurate and explainable.
